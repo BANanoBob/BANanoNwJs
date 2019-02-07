@@ -1,0 +1,255 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=TestLayout.bjl
+FileGroup1=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=banano
+Library4=bananonwjs
+NumberOfFiles=1
+NumberOfLibraries=4
+NumberOfModules=0
+Version=7
+@EndOfDesignText@
+#Region Project Attributes 
+
+	#IgnoreWarnings: 12, 16
+	
+#End Region
+
+Sub Process_Globals
+
+	Private JFX As JFX
+	
+	Private BANano As BANano
+
+	Private OS  As BANanoNwJsOs
+	Private FS  As BANanoNwJsFs
+	Private Win As BANanoNwJsWin
+	
+End Sub
+
+Sub AppStart (Form1 As Form, Args() As String)
+	
+	BANano.Initialize("BANanoNwJs", "BANanoNwJs", 1)
+	
+	BANano.UseServiceWorker = False
+	
+	BANano.HTML_NAME = "index.html"
+	
+	BANano.Header.Title = "BANanoNwJs"
+
+	BANano.JAVASCRIPT_NAME = "app.js"
+	
+	' ####################################
+	
+	Dim NwJsFolder As String = "E:\nwjsTest\BANano\" ' <- modify this path to your needs!
+	
+	' ####################################
+
+	BANano.Build(NwJsFolder)
+
+	Dim AppJs As String = $"
+		var win = nw.Window.open('./BANanoNwJs/index.html', {
+		  position: 'center',
+		  width: 1000,
+		  height: 800,
+		  focus: true
+		});	
+	"$
+
+	File.WriteString(NwJsFolder, "app.js", AppJs)
+
+	Dim PackageJson As String = $"{
+	  "name": "BANanoNwJs",
+	  "version": "1.0.0",
+	  "description": "",
+	  "main": "app.js",
+	  "author": "Peter Parker",
+	  "license": "MIT"
+	}"$
+
+	File.WriteString(NwJsFolder, "package.json", PackageJson)
+
+	JFX.ShowExternalDocument(File.Combine(NwJsFolder,"nw.exe"))
+
+	ExitApplication
+
+End Sub
+
+Sub BANanoNwJs_Ready()
+
+	#If CSS
+			
+			body {
+				font-family: Verdana;
+				font-size: 0.8em;
+			}
+			
+	#End If	
+	
+	OS.Initialize
+	FS.Initialize
+	Win.Initialize
+	
+	BANano.LoadLayout("body", "TestLayout")
+
+End Sub
+
+Sub GetJsonStringFromObject(O As Object) As String
+	Dim JS As BANanoJSONGenerator
+	JS.Initialize(O)
+	Return JS.ToString
+End Sub
+
+Sub btnDemoOS_Click (event As BANanoEvent)
+	
+	Dim EOL As String = OS.EOL
+	
+	Select EOL
+		
+		Case Chr(10)
+			EOL = "LF"
+		Case Chr(13)
+			EOL = "CR"
+		Case Chr(13) & Chr(10)
+			EOL = "CRLF"
+		Case Chr(10) & Chr(13)
+			EOL = "LFCR"
+		Case Else
+			EOL = "???"
+		
+	End Select
+	
+	Dim myStringBuilder As StringBuilder
+	myStringBuilder.Initialize
+	
+	myStringBuilder.Append($"OS (OperatingSystem):"$).Append(CRLF).Append(CRLF)
+	
+	myStringBuilder.Append("EOL: "               & EOL).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Arch: "              & OS.Arch).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Constants: "         & GetJsonStringFromObject(OS.Constants).SubString2(0, 200)).Append("...").Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Cpus: "              & GetJsonStringFromObject(OS.Cpus).SubString2(0, 200)).Append("...").Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Endianness: "        & OS.Endianness).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Freemem: "           & OS.Freemem & " bytes").Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Homedir: "           & OS.Homedir).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Hostname: "          & OS.Hostname).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("LoadAvg: "           & GetJsonStringFromObject(OS.LoadAvg)).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("NetworkInterfaces: " & GetJsonStringFromObject(OS.NetworkInterfaces).SubString2(0, 200)).Append("...").Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Platform: "          & GetJsonStringFromObject(OS.Platform)).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Release: "           & OS.Release).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Tmpdir: "            & OS.Tmpdir).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Totalmem: "          & OS.Totalmem & " bytes").Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Type: "              & OS.TypeX).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Uptime: "            & OS.Uptime & " seconds").Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("UserInfo: "          & GetJsonStringFromObject(OS.UserInfo)).Append(CRLF).Append(CRLF)
+
+	BANano.Alert(myStringBuilder.ToString)
+
+End Sub
+
+Sub btnDemoFS_Click (event As BANanoEvent)
+
+	Dim myStringBuilder As StringBuilder
+	myStringBuilder.Initialize
+
+	Dim TempFileName As String = OS.Tmpdir & "/tempfile.txt"
+	
+	TempFileName = TempFileName.Replace(Chr(92), Chr(47)) ' escaping the backslash
+	
+	myStringBuilder.Append($"FS (FileSystem):"$).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append($"Trying to write a message to:"$).Append(CRLF)
+	myStringBuilder.Append($"${TempFileName}..."$).Append(CRLF).Append(CRLF)
+	
+	FS.WriteFileSync(TempFileName, "Hello From BANanoNwJs!" & CRLF)
+	FS.AppendFileSync(TempFileName, "Current time is " & DateTime.Time(DateTime.Now))
+	
+	myStringBuilder.Append($"Trying to read a message from:"$).Append(CRLF)
+	myStringBuilder.Append($"${TempFileName}..."$).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Message:").Append(CRLF).Append(CRLF)
+	myStringBuilder.Append(FS.ReadFileSync(TempFileName)).Append(CRLF).Append(CRLF)
+	myStringBuilder.Append("Ready! :-)").Append(CRLF).Append(CRLF)
+
+	BANano.Alert(myStringBuilder.ToString)
+
+End Sub
+
+Sub btnDemoWinResizeTo_Click (event As BANanoEvent)
+	
+	Win.ResizeTo(800, 600)
+	
+End Sub
+
+Sub btnDemoWinMoveBy_Click (event As BANanoEvent)
+	
+	Win.MoveBy(10, 10)
+
+End Sub
+
+Sub GetPrintersCallback(Printers As List)
+	
+	BANano.Alert(GetJsonStringFromObject(Printers))
+	
+End Sub
+
+Sub btnDemoWinGetPrinters_Click (event As BANanoEvent)
+
+	Dim ev As Map = CreateMap()
+
+	Win.GetPrinters(BANano.CallBack(Me, "getprinterscallback", Array(ev)))
+	
+End Sub
+
+Sub btnDemoWinPrint_Click (event As BANanoEvent)
+	
+	Dim Options As Map = CreateMap()
+
+	Options.Put("autoprint", False)              ' autoprint              {Boolean} whether to print without the need for user’s interaction; optional, true by default
+	
+	' Options.Put("printer", ...)                ' printer                {String}      the device name of the printer returned by nw.Window.getPrinters(); No need to set this when printing to PDF
+	
+	Options.Put("pdf_path", OS.Tmpdir & "/temp.pdf") ' pdf_path           {String}      the path of the output PDF when printing to PDF
+	
+	'	Options.Put("headerFooterEnabled", ...)    ' headerFooterEnabled    {Boolean}     whether to enable header and footer
+	'	Options.Put("landscape", ...)              ' landscape              {Boolean}     whether to use landscape or portrait
+	'	Options.Put("mediaSize", ...)              ' mediaSize              {JSON Object} the paper size spec. (example: see below)
+	'	Options.Put("shouldPrintBackgrounds", ...) ' shouldPrintBackgrounds {Boolean}     whether to print CSS backgrounds
+	'	Options.Put("marginsType", ...)            ' marginsType            {Integer}     0 - Default; 1 - No margins; 2 - minimum; 3 - Custom, see marginsCustom.
+	'	Options.Put("marginsCustom", ...)          ' marginsCustom          {JSON Object} the custom margin setting; units are points. (example: see below)
+	'	Options.Put("copies", ...)                 ' copies                 {Integer}     the number of copies to print.
+	'	Options.Put("scaleFactor", 100)            ' scaleFactor            {Integer}     the scale factor; 100 is the default.
+	'	Options.Put("headerString", ...)           ' headerString           {String}      string to replace the URL in the header.
+	'	Options.Put("footerString", ...)           ' footerString           {String}      string to replace the URL in the footer.
+
+	' marginsCustom example: "marginsCustom":{"marginBottom":54,"marginLeft":70,"marginRight":28,"marginTop":32}
+	' mediaSize example: 'mediaSize':{'name': 'CUSTOM', 'width_microns': 279400, 'height_microns': 215900, 'custom_display_name':'Letter', 'is_default': true}
+	
+	Win.Print(Options)
+
+End Sub
+
+Sub btnDemoWinSetTitle_Click (event As BANanoEvent)
+	
+	Win.Title = "Hello BANano! Current time is " & DateTime.Time(DateTime.Now)
+	
+End Sub
+
+Sub btnDemoWinToggleKioskMode_Click (event As BANanoEvent)
+
+	Win.ToggleKioskMode
+	
+End Sub
+
+Sub btnOpenConsole_Click (event As BANanoEvent)
+	
+	Win.ShowDevTools
+	
+End Sub
+
+Sub btnCloseConsole_Click (event As BANanoEvent)
+	
+	Win.CloseDevTools
+
+End Sub
+

@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <b4x_version>7.00</b4x_version>
+  <dependsOn>jcore</dependsOn>
+  <dependsOn>jfx</dependsOn>
+  <dependsOn>banano</dependsOn>
+  <dependsOn>json</dependsOn>
+  <dependsOn>byteconverter</dependsOn>
+  <dependsOn>jrandomaccessfile</dependsOn>
+  <class>
+    <name>b4j.example.bananonwjswin</name>
+    <shortname>BANanoNwJsWin</shortname>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="Blur">_blur</name>
+      <comment>
+Move focus away. Usually it will move focus to other windows of your app, since on some platforms there is no concept of blur.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winblur&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Close">_close</name>
+      <comment>
+Closes the current window. You can prevent the closing by listening to the close event. If force is specified and equals true, then the close event will be ignored.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#wincloseforce&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Force</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="CloseDevTools">_closedevtools</name>
+      <comment>
+Close the devtools window.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winclosedevtools&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="EnterFullscreen">_enterfullscreen</name>
+      <comment>
+Make the window fullscreen.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winenterfullscreen&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="EnterKioskMode">_enterkioskmode</name>
+      <comment>
+Enter the Kiosk mode. In Kiosk mode, the app will be fullscreen and try to prevent users
+from leaving the app, so you should remember to provide a way in app to leave Kiosk mode.
+This mode is mainly used for presentation on public displays.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winenterkioskmode&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Focus">_focus</name>
+      <comment>
+Focus on the window.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winfocus&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Get">_get</name>
+      <comment>
+Get the current window
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#windowgetwindow_object&lt;/link&gt;
+</comment>
+      <returntype>com.ab.banano.BANanoObject</returntype>
+    </method>
+    <method>
+      <name DesignerName="getHeight" HideFromIDE="true">_getheight</name>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetPrinters">_getprinters</name>
+      <comment>
+Enumerate the printers in the system.
+The callback function will receive an array of JSON objects for the printer information.
+The device name of the JSON object can be used as parameter in nw.Window.print().
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#wingetprinterscallback&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Callback</name>
+        <type>Object</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="getTitle" HideFromIDE="true">_gettitle</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="getWidth" HideFromIDE="true">_getwidth</name>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="getX" HideFromIDE="true">_getx</name>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="getY" HideFromIDE="true">_gety</name>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="Hide">_hide</name>
+      <comment>
+Hide the window. User will not be able to find the window once it’s hidden.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winhide&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LeaveFullscreen">_leavefullscreen</name>
+      <comment>
+Leave the fullscreen mode.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winleavefullscreen&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="LeaveKioskMode">_leavekioskmode</name>
+      <comment>
+Leave the Kiosk mode.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winleavekioskmode&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Maximize">_maximize</name>
+      <comment>
+Maximize the window on GTK and Windows, and zoom the window on Mac OS X.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winmaximize&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Minimize">_minimize</name>
+      <comment>
+Minimize the window to task bar on Windows, iconify the window on GTK, and miniaturize the window on Mac OS X.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winminimize&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="MoveBy">_moveby</name>
+      <comment>
+Moves a window a specified number of pixels relative to its current coordinates.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winmovebyx-y&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>X</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Y</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="MoveTo">_moveto</name>
+      <comment>
+Moves a windows left and top edge to the specified coordinates.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winmovetox-y&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>X</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Y</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Print">_print</name>
+      <comment>
+Print the web contents in the window with or without the need for user’s interaction. options is a JSON object with the following fields:
+
+* autoprint {Boolean} whether to print without the need for user’s interaction; optional, true by default
+* printer {String} the device name of the printer returned by nw.Window.getPrinters(); No need to set this when printing to PDF
+* pdf_path {String} the path of the output PDF when printing to PDF
+* headerFooterEnabled {Boolean} whether to enable header and footer
+* landscape {Boolean} whether to use landscape or portrait
+* mediaSize {JSON Object} the paper size spec
+* shouldPrintBackgrounds {Boolean} whether to print CSS backgrounds
+* marginsType {Integer} 0 - Default; 1 - No margins; 2 - minimum; 3 - Custom, see marginsCustom.
+* marginsCustom {JSON Object} the custom margin setting; units are points.
+* copies {Integer} the number of copies to print.
+* scaleFactor {Integer} the scale factor; 100 is the default.
+* headerString {String} string to replace the URL in the header.
+* footerString {String} string to replace the URL in the footer.
+* marginsCustom example: "marginsCustom":{"marginBottom":54,"marginLeft":70,"marginRight":28,"marginTop":32}
+* mediaSize example: 'mediaSize':{'name': 'CUSTOM', 'width_microns': 279400, 'height_microns': 215900, 'custom_display_name':'Letter', 'is_default': true}
+
+NOTE: If no options are being passed, win.print({}) is what should be called.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#wingetprinterscallback&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Options</name>
+        <type>anywheresoftware.b4a.objects.collections.Map</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Reload">_reload</name>
+      <comment>
+Reloads the current window.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winreload&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="ReloadIgnoringCache">_reloadignoringcache</name>
+      <comment>
+Reloads the current page by starting a new renderer process from scratch.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winreloadignoringcache&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="ResizeBy">_resizeby</name>
+      <comment>
+Resizes a window by the specified amount.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winresizebywidth-height&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Width</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Height</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ResizeTo">_resizeto</name>
+      <comment>
+Resizes a window to the specified width and height.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winresizetowidth-height&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Width</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Height</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Restore">_restore</name>
+      <comment>
+Restore window to previous state after the window is minimized, i.e. the reverse of minimize(). It’s not named unminimize since restore is used commonly.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winrestore&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="SetAlwaysOnTop">_setalwaysontop</name>
+      <comment>
+Sets the widget to be on top of all other windows in the window system.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winsetalwaysontoptop&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>AlwaysOnTop</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setHeight" HideFromIDE="true">_setheight</name>
+      <comment>
+Get or set the window height
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winheight&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Height</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SetMaximumSize">_setmaximumsize</name>
+      <comment>
+Set windows maximum size.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winsetmaximumsizewidth-height&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Width</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Height</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SetMinimumSize">_setminimumsize</name>
+      <comment>
+Set windows minimum size.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winsetminimumsizewidth-height&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Width</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Height</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SetResizable">_setresizable</name>
+      <comment>
+Set whether window is resizable.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winsetresizableresizable&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Resizable</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SetShowInTaskbar">_setshowintaskbar</name>
+      <comment>
+Control whether to show window in taskbar or dock. See also show_in_taskbar in Manifest-format.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winsetprogressbarprogress&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ShowInTaskbar</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setTitle" HideFromIDE="true">_settitle</name>
+      <comment>
+Get or set the window title
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#wintitle&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Title</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setWidth" HideFromIDE="true">_setwidth</name>
+      <comment>
+Get or set the window width
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winwidth&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Width</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setX" HideFromIDE="true">_setx</name>
+      <comment>
+Get or set left offset from window to screen.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winx&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>X</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setY" HideFromIDE="true">_sety</name>
+      <comment>
+Get or set top offset from window to screen.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winy&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Y</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Show">_show</name>
+      <comment>
+Show the window if it’s not shown.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winshowis_show&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="ShowDevTools">_showdevtools</name>
+      <comment>
+Open the devtools to inspect the window.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winshowdevtoolsiframe-callback&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="ToggleFullscreen">_togglefullscreen</name>
+      <comment>
+Toggle the fullscreen mode.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#wintogglefullscreen&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="ToggleKioskMode">_togglekioskmode</name>
+      <comment>
+Toggle the kiosk mode.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#wintogglekioskmode&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Unmaximize">_unmaximize</name>
+      <comment>
+Unmaximize the window, i.e. the reverse of maximize().
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winunmaximize&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Window">_window</name>
+      <comment>
+Get the corresponding DOM window object of the native window.
+
+http://docs.nwjs.io/en/latest/References/Window/#winwindow
+</comment>
+      <returntype>anywheresoftware.b4a.objects.collections.Map</returntype>
+    </method>
+    <property>
+      <name DesignerName="Height">_height</name>
+      <comment>
+Get or set the window height
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winheight&lt;/link&gt;
+</comment>
+      <returntype>int</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>int</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Title">_title</name>
+      <comment>
+Get or set the window title
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#wintitle&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>String</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Width">_width</name>
+      <comment>
+Get or set the window width
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winwidth&lt;/link&gt;
+</comment>
+      <returntype>int</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>int</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="X">_x</name>
+      <comment>
+Get or set left offset from window to screen.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winx&lt;/link&gt;
+</comment>
+      <returntype>int</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>int</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Y">_y</name>
+      <comment>
+Get or set top offset from window to screen.
+
+&lt;link&gt;NodeJS Documentation|http://docs.nwjs.io/en/latest/References/Window/#winy&lt;/link&gt;
+</comment>
+      <returntype>int</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>int</type>
+      </parameter>
+    </property>
+  </class>
+  <class>
+    <name>b4j.example.bananonwjsos</name>
+    <shortname>BANanoNwJsOs</shortname>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="Arch">_arch</name>
+      <comment>
+The os.arch() method returns a string identifying the operating system CPU architecture for which the Node.js binary was compiled.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_arch&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Constants">_constants</name>
+      <comment>
+Returns an object containing commonly used operating system specific constants for error codes, process signals, and so on.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_constants&lt;/link&gt;
+</comment>
+      <returntype>anywheresoftware.b4a.objects.collections.Map</returntype>
+    </method>
+    <method>
+      <name DesignerName="Cpus">_cpus</name>
+      <comment>
+The os.cpus() method returns an array of objects containing information about each logical CPU core.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_cpus&lt;/link&gt;
+</comment>
+      <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+    </method>
+    <method>
+      <name DesignerName="Endianness">_endianness</name>
+      <comment>
+The os.endianness() method returns a string identifying the endianness of the CPU for which the Node.js binary was compiled.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_endianness&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="EOL">_eol</name>
+      <comment>
+A string constant defining the operating system-specific end-of-line marker
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_eol&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Freemem">_freemem</name>
+      <comment>
+The os.freemem() method returns the amount of free system memory in bytes as an integer.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_freemem&lt;/link&gt;
+</comment>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetPriority">_getpriority</name>
+      <comment>
+Currently not implemented!
+
+The os.getPriority() method returns the scheduling priority for the process specified by pid. If pid is not provided, or is 0, the priority of the current process is returned.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_getpriority_pid&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>PID</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Homedir">_homedir</name>
+      <comment>
+The os.homedir() method returns the home directory of the current user as a string.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_homedir&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Hostname">_hostname</name>
+      <comment>
+The os.hostname() method returns the hostname of the operating system as a string.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_hostname&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadAvg">_loadavg</name>
+      <comment>
+The os.loadavg() method returns an array containing the 1, 5, and 15 minute load averages.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_loadavg&lt;/link&gt;
+</comment>
+      <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+    </method>
+    <method>
+      <name DesignerName="NetworkInterfaces">_networkinterfaces</name>
+      <comment>
+The os.networkInterfaces() method returns an object containing only network interfaces that have been assigned a network address.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_networkinterfaces&lt;/link&gt;
+</comment>
+      <returntype>anywheresoftware.b4a.objects.collections.Map</returntype>
+    </method>
+    <method>
+      <name DesignerName="Platform">_platform</name>
+      <comment>
+The os.platform() method returns a string identifying the operating system platform as set during compile time of Node.js.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_platform&lt;/link&gt;
+</comment>
+      <returntype>anywheresoftware.b4a.objects.collections.Map</returntype>
+    </method>
+    <method>
+      <name DesignerName="Release">_release</name>
+      <comment>
+The os.release() method returns a string identifying the operating system release.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_release&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="SetPriority">_setpriority</name>
+      <comment>
+Currently not implemented!
+
+The os.setPriority() method attempts to set the scheduling priority for the process specified by pid. If pid is not provided, or is 0, the priority of the current process is used.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_setpriority_pid_priority&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>PID</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Priority</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Tmpdir">_tmpdir</name>
+      <comment>
+The os.tmpdir() method returns a string specifying the operating system's default directory for temporary files.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_tmpdir&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Totalmem">_totalmem</name>
+      <comment>
+The os.totalmem() method returns the total amount of system memory in bytes as an integer.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_totalmem&lt;/link&gt;
+</comment>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="TypeX">_typex</name>
+      <comment>
+The os.type() method returns a string identifying the operating system name as returned by uname(3). For example 'Linux' on Linux, 'Darwin' on macOS and 'Windows_NT' on Windows.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_type&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Uptime">_uptime</name>
+      <comment>
+The os.uptime() method returns the system uptime in number of seconds.
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_uptime&lt;/link&gt;
+</comment>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="UserInfo">_userinfo</name>
+      <comment>
+The os.userInfo() method returns information about the currently effective user
+
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/os.html#os_os_userinfo_options&lt;/link&gt;
+</comment>
+      <returntype>anywheresoftware.b4a.objects.collections.Map</returntype>
+    </method>
+  </class>
+  <class>
+    <name>b4j.example.bananonwjsfs</name>
+    <shortname>BANanoNwJsFs</shortname>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="AppendFileSync">_appendfilesync</name>
+      <comment>
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/fs.html#fs_fs_appendfilesync_path_data_options&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Filename</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>StringToAppend</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ReadFileSync">_readfilesync</name>
+      <comment>
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Filename</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="WriteFileSync">_writefilesync</name>
+      <comment>
+&lt;link&gt;NodeJS Documentation|https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options&lt;/link&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Filename</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>StringToWrite</name>
+        <type>String</type>
+      </parameter>
+    </method>
+  </class>
+  <class>
+    <name>b4j.example.bananonwjshtmltag</name>
+    <shortname>BANanoNwJsHtmlTag</shortname>
+    <event>Click (event As BANanoEvent)</event>
+    <designerProperty>Key: Classes, DisplayName: Classes, FieldType: String, DefaultValue: , Description: Classes added to the HTML tag.</designerProperty>
+    <designerProperty>Key: Style, DisplayName: Style, FieldType: String, DefaultValue: , Description: Styles added to the HTML tag. Must be a json String.</designerProperty>
+    <designerProperty>Key: MarginLeft, DisplayName: Margin Left, FieldType: String, DefaultValue: , Description: Margin Left</designerProperty>
+    <designerProperty>Key: MarginRight, DisplayName: Margin Right, FieldType: String, DefaultValue: , Description: Margin Right</designerProperty>
+    <designerProperty>Key: MarginTop, DisplayName: Margin Top, FieldType: String, DefaultValue: , Description: Margin Top</designerProperty>
+    <designerProperty>Key: MarginBottom, DisplayName: Margin Bottom, FieldType: String, DefaultValue: , Description: Margin Bottom</designerProperty>
+    <designerProperty>Key: PaddingLeft, DisplayName: Padding Left, FieldType: String, DefaultValue: , Description: Padding Left</designerProperty>
+    <designerProperty>Key: PaddingRight, DisplayName: Padding Right, FieldType: String, DefaultValue: , Description: Padding Right</designerProperty>
+    <designerProperty>Key: PaddingTop, DisplayName: Padding Top, FieldType: String, DefaultValue: , Description: Padding Top</designerProperty>
+    <designerProperty>Key: PaddingBottom, DisplayName: Padding Bottom, FieldType: String, DefaultValue: , Description: Padding Bottom</designerProperty>
+    <designerProperty>Key: TagName, DisplayName: TagName, FieldType: String, DefaultValue: div, Description: Tagname</designerProperty>
+    <designerProperty>Key: Text, DisplayName: Text, FieldType: String, DefaultValue: , Description: Text</designerProperty>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="AddToParent">_addtoparent</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>targetID</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="DesignerCreateView">_designercreateview</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Target</name>
+        <type>com.ab.banano.BANanoElement</type>
+      </parameter>
+      <parameter>
+        <name>Props</name>
+        <type>anywheresoftware.b4a.objects.collections.Map</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="getClasses" HideFromIDE="true">_getclasses</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="getHtml" HideFromIDE="true">_gethtml</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="getStyle" HideFromIDE="true">_getstyle</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="getText" HideFromIDE="true">_gettext</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+      <parameter>
+        <name>CallBack</name>
+        <type>Object</type>
+      </parameter>
+      <parameter>
+        <name>Name</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>EventName</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Remove">_remove</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="setClasses" HideFromIDE="true">_setclasses</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Classes</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setHtml" HideFromIDE="true">_sethtml</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Html</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setStyle" HideFromIDE="true">_setstyle</name>
+      <comment> must be a json string
+ e.g. $"{ "width": "200px", "height": "200px", "background": "green", "border-radius": "5px" }"$
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Style</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setText" HideFromIDE="true">_settext</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Text</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Trigger">_trigger</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>event</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>params</name>
+        <type>String[]</type>
+      </parameter>
+    </method>
+    <property>
+      <name DesignerName="Classes">_classes</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>String</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Html">_html</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>String</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Style">_style</name>
+      <comment> must be a json string
+ e.g. $"{ "width": "200px", "height": "200px", "background": "green", "border-radius": "5px" }"$
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>String</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Text">_text</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>String</type>
+      </parameter>
+    </property>
+  </class>
+  <version>1.01</version>
+  <author>Peter Tübben</author>
+</root>
