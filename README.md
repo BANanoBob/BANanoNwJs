@@ -14,7 +14,7 @@ Creating desktop applications (Windows, Linux, MacOS) with BANano and NW.js.
 
 * Copy all files of the folder `Library` into the internal library folder of B4J.
 
-* Open the `BANanoNwJsDemo.b4j` the folder `Demo` with B4J
+* Open the `BANanoNwJsDemo.b4j` in the folder `Demo` with B4J.
 
 **Important:** Before you start the demo, adjust the variable `NwJsFolder`. Here you have to enter the folder where you unpacked NW.js.
 
